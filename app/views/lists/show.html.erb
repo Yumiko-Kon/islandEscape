@@ -1,0 +1,8 @@
+<h1><%= @list.title %></h1>
+<%= @list.details %>
+<%= link_to "back lists", lists_path %>
+raise
+<%= link_to "Delete",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
