@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  # root to: "pages#home"
+    root to: "lists#index"
+
   get "/about", to: "pages#about"
 
   resource :islands
-  resources :lists
+  resources :lists, except: :index
   resources :chatrooms, only: :show
   resources :flats
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
